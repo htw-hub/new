@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+body {
+    background-color: #f3f8fe;
+}
+
+.login button {
+    background-color: #3e4685;
+}
+
+a:hover {
+    color: #3e4685;
+}

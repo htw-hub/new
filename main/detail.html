@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+    <link href="/main/css/detail.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+    <div class="main">
+        <span>date:</span><input type="date" class="date"><br>
+        <span>person:</span><input type="text" class="person" placeholder="person">
+        <span>theme:</span><input type="text" class="theme" placeholder="theme"><br>
+        <span>text:</span><input type="text" class="text" placeholder="text"><br>
+        <input type="file" class="file"><br>
+        <form id="comment" class="comment">  
+            <input type="text" id="username" placeholder="用户名" required>  
+            <textarea id="content" placeholder="评论内容..." required></textarea>  
+            <button type="button" class="comments"  onclick="addComment()">添加评论</button>  
+        </form>  
+    </div>
+    <div class="copyright">
+        <p>南京大学</p>
+    </div>
+    
+    <script>
+        var div = document.getElementById('comments');
+        div.addEventListener('click', function(){
+            var newDiv = document.createElement('div');
+            newDiv.className = 'newcomment';
+            document.getElementById('comment').appendChild(newDiv);
+            
+            var newcomments1 = document.createElement('p');
+            newcomments1.textContent='user1';
+            newDiv.appendChild(newcomments1);
+
+            var newcomments2 = document.createElement('input');
+            newcomments2.type='';
+            newDiv.appendChild(newcomments);
+        })
+    </script>
+</body>
+
+</html>

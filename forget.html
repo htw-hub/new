@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>敏捷看板-忘记密码</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="src/css/index.css" />
+</head>
+
+<body>
+    <div class="flex h-screen items-center justify-center" id="dowebok">
+        <div class="w-4/5 sm:w-96 text-sm">
+            <div class="w-32 h-32 mx-auto rounded-full shadow-md overflow-hidden">
+                <img class="w-full" src="src/img/log.jpg" alt="" />
+            </div>
+            <h1 class="text-6xl font-bold underline text-center">  忘记密码  </h1>
+            <div class="relative mt-20 p-4 rounded-2xl bg-white shadow-md">
+                <label for="username" class="text-gray-500">用户名</label>
+                <div class="flex items-center mt-4">
+                    <i class="fa fa-fw fa-envelope-o text-gray-500"></i>
+                    <input
+                        type="text"
+                        id="username"
+                        class="flex-1 mx-3 outline-none bg-transparent"
+                        placeholder="请输入用户名"
+                        v-model.trim="username"
+                        @blur="checkUsername"
+                    />
+                </div>
+                <p
+                    class="absolute left-4 -bottom-6 text-red-500 text-xs"
+                    v-show="usernameError"
+                    v-text="usernameErrorText"
+                ></p>
+            </div>
+            <div class="relative mt-8 p-4 rounded-2xl bg-white shadow-md">
+                <label for="email">邮箱</label>
+                <div class="flex items-center mt-4">
+                    <i class="fa fa-fw fa-lock text-gray-500"></i>
+                    <input
+                        type="text"
+                        id="email"
+                        class="flex-1 mx-3 outline-none bg-transparent"
+                        placeholder="请输入邮箱"
+                        v-model.trim="email"
+                        @blur="checkEmail"
+                    />
+                    
+                </div>
+                <p
+                    class="absolute left-4 -bottom-6 text-red-500 text-xs"
+                    v-show="emailError"
+                    v-text="emailErrorText"
+                ></p>
+            </div>
+            <div class="login mt-8 shadow-md rounded-full overflow-hidden">
+                <button
+                    class="w-full p-3 rounded-full text-white hover:opacity-90"
+                    @click="login"
+                    >找回密码</button
+                >
+            </div>
+            <div class="flex justify-between mt-7 text-xs">
+                <a href="index.html" class="text-gray-500">返回登录</a>
+                <a href="sign.html" class="text-gray-500">还没有账号？</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/js/vue.min.js"></script>
+    <script type="module" src="src/js/script.js"></script>
+</body>
+</html>

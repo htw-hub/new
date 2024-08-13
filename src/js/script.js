@@ -52,6 +52,14 @@ var app = new Vue({
             } else {
                 window.location.href="../../main/project.html" 
             }
+        },
+        sign: function(){
+            alert('注册成功')
+            window.location.href="/index.html" 
+        },
+        forget: function(){
+            alert('你的密码是：****')
+            window.location.href="/index.html" 
         }
     }
 })

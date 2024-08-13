@@ -15,16 +15,13 @@
         <span>theme:</span><input type="text" class="theme" placeholder="theme"><br>
         <span>text:</span><input type="text" class="text" placeholder="text"><br>
         <input type="file" class="file"><br>
-        <form id="comment" class="comment">  
-            <input type="text" id="username" placeholder="用户名" required>  
-            <textarea id="content" placeholder="评论内容..." required></textarea>  
-            <button type="button" class="comments"  onclick="addComment()">添加评论</button>  
-        </form>  
+        <div class="comment" id="comment">
+            <button class="comments" id="comments">add comments</button>
+        </div>
     </div>
     <div class="copyright">
         <p>南京大学</p>
     </div>
-    
     <script>
         var div = document.getElementById('comments');
         div.addEventListener('click', function(){
@@ -32,12 +29,9 @@
             newDiv.className = 'newcomment';
             document.getElementById('comment').appendChild(newDiv);
             
-            var newcomments1 = document.createElement('p');
-            newcomments1.textContent='user1';
-            newDiv.appendChild(newcomments1);
-
-            var newcomments2 = document.createElement('input');
-            newcomments2.type='';
+            var newcomments = document.createElement('input');
+            newcomments.className = 'newc';
+            newcomments.type = 'text';
             newDiv.appendChild(newcomments);
         })
     </script>

@@ -50,16 +50,7 @@ var app = new Vue({
             if (this.usernameError || this.passwordError) {
                 return
             } else {
-
-                if ((this.username =="admin")&&(this.password == "admin123")){
-                    window.location.href="../../main/project.html"             
-                } else {
-                    alert("密码错误")
-                    return
-                }
-
-
-                
+                window.location.href="../../main/project.html" 
             }
         }
     }

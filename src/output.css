@@ -616,6 +616,10 @@ video {
   display: table;
 }
 
+.table-row {
+  display: table-row;
+}
+
 .hidden {
   display: none;
 }

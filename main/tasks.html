@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>敏捷看板</title>
+    <link rel="stylesheet" href="../src/css/font-awesome.min.css" />
     <link href="/main/css/tasks.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
@@ -13,35 +15,43 @@
         <h1>敏捷看板</h1>
         <div class="todo" id="container1">
             <h2>TODO</h2>
-            <div class="todo1">
-                <input class="todo2" type="date" value="2024-08-01" readonly>
-                <input class="todo3" type="text" value="开发者a" readonly>
-                <input class="todo4" type="text" value="web开发1" readonly>
-                <input class="todo5" type="file">
-                <button class="todo6" id="web1">click for details</button>
-            </div>
+            <div id="showDiv1">
 
+            </div>
+            <div class="todo1" id="addDiv1" style="display: none;">
+                <input class="todo2" id="taskDate1" type="date">
+                <input class="todo3" id="taskPerson1" type="text" placeholder="person">
+                <input class="todo4" id="taskTheme1" type="text" placeholder="theme">
+                <input class="todo5" type="file">
+                <button class="todo6" id="saveTaskTodo">保存</button>
+            </div>
             <button id="addButtontodo">Add</button>
         </div>
         <div class="doing" id="container2">
             <h2>DOING</h2>
-            <div class="todo1">
-                <input class="todo2" type="date" value="2024-08-02" readonly>
-                <input class="todo3" type="text" value="开发者b" readonly>
-                <input class="todo4" type="text" value="web开发2" readonly>
-                <input class="todo5" type="file">
-                <button class="todo6" id="web2">click for details</button>
+            <div id="showDiv2">
+                
+            </div>
+            <div class="doing1" id="addDiv2" style="display: none;">
+                <input class="doing2" id="taskDate2" type="date">
+                <input class="doing3" id="taskPerson2" type="text" placeholder="person">
+                <input class="doing4" id="taskTheme2" type="text" placeholder="theme">
+                <input class="doing5" type="file">
+                <button class="doing6" id="saveTaskDoing">保存</button>
             </div>
             <button id="addButtondoing">Add</button>
         </div>
         <div class="done" id="container3">
             <h2>DONE</h2>
-            <div class="todo1">
-                <input class="todo2" type="date" value="2024-08-03" readonly>
-                <input class="todo3" type="text" value="开发者c" readonly>
-                <input class="todo4" type="text" value="web开发3" readonly>
-                <input class="todo5" type="file">
-                <button class="todo6" id="web3">click for details</button>
+            <div id="showDiv3">
+                
+            </div>
+            <div class="done1" id="addDiv3" style="display: none;">
+                <input class="done2" id="taskDate3" type="date">
+                <input class="done3" id="taskPerson3" type="text" placeholder="person">
+                <input class="done4" id="taskTheme3" type="text" placeholder="theme">
+                <input class="done5" type="file">
+                <button class="done6" id="saveTaskDone">保存</button>
             </div>
             <button id="addButtondone">Add</button>
         </div>
@@ -49,127 +59,7 @@
     <div class="copyright">
         <p>南京大学</p>
     </div>
-    <script>
-        var div1 = document.getElementById('web1');
-        div1.addEventListener('click', function () {
-            window.location.href = "detail.html";
-        })
-        var div2 = document.getElementById('web2');
-        div2.addEventListener('click', function () {
-            window.location.href = "detail.html";
-        })
-        var div3 = document.getElementById('web3');
-        div3.addEventListener('click', function () {
-            window.location.href = "detail.html";
-        })
-
-        var div = document.getElementById('addButtontodo');
-        div.addEventListener('click', function () {
-            var newDiv = document.createElement('div');
-            newDiv.className = 'todo1';
-            document.getElementById('container1').appendChild(newDiv);
-
-            var newdate = document.createElement('input');
-            newdate.className = 'todo2';
-            newdate.type = 'date';
-            newDiv.appendChild(newdate);
-
-            var newperson = document.createElement('input');
-            newperson.className = 'todo3';
-            newperson.type = 'text';
-            newperson.placeholder = 'person';
-            newDiv.appendChild(newperson);
-
-            var newtheme = document.createElement('input');
-            newtheme.className = 'todo4';
-            newtheme.type = 'text';
-            newtheme.placeholder = 'theme';
-            newDiv.appendChild(newtheme);
-
-            var newfile = document.createElement('input');
-            newfile.className = 'todo5';
-            newfile.type = 'file';
-            newDiv.appendChild(newfile);
-
-            var newbut = document.createElement('button');
-            newbut.className = 'todo6';
-            newbut.textContent = "click for details";
-            newDiv.appendChild(newbut);
-            newbut.addEventListener('click', function () {
-                window.location.href = "detail.html";
-            })
-        });
-        var div = document.getElementById('addButtondoing')
-        div.addEventListener('click', function () {
-            var newDiv = document.createElement('div');
-            newDiv.className = 'todo1';
-            document.getElementById('container2').appendChild(newDiv);
-            var newdate = document.createElement('input');
-            newdate.className = 'todo2';
-            newdate.type = 'date';
-            newDiv.appendChild(newdate);
-
-            var newperson = document.createElement('input');
-            newperson.className = 'todo3';
-            newperson.type = 'text';
-            newperson.placeholder = 'person';
-            newDiv.appendChild(newperson);
-
-            var newtheme = document.createElement('input');
-            newtheme.className = 'todo4';
-            newtheme.type = 'text';
-            newtheme.placeholder = 'theme';
-            newDiv.appendChild(newtheme);
-            var newfile = document.createElement('input');
-            newfile.className = 'todo5';
-            newfile.type = 'file';
-            newDiv.appendChild(newfile);
-
-            var newbut = document.createElement('button');
-            newbut.className = 'todo6';
-            newbut.textContent = "click for details";
-            newDiv.appendChild(newbut);
-            newbut.addEventListener('click', function () {
-                window.location.href = "detail.html";
-
-            })
-        });
-        var div = document.getElementById('addButtondone')
-        div.addEventListener('click', function () {
-            var newDiv = document.createElement('div');
-            newDiv.className = 'todo1';
-            document.getElementById('container3').appendChild(newDiv);
-            var newdate = document.createElement('input');
-            newdate.className = 'todo2';
-            newdate.type = 'date';
-            newDiv.appendChild(newdate);
-
-            var newperson = document.createElement('input');
-            newperson.className = 'todo3';
-            newperson.type = 'text';
-            newperson.placeholder = 'person';
-            newDiv.appendChild(newperson);
-
-            var newtheme = document.createElement('input');
-            newtheme.className = 'todo4';
-            newtheme.type = 'text';
-            newtheme.placeholder = 'theme';
-            newDiv.appendChild(newtheme);
-            var newfile = document.createElement('input');
-            newfile.className = 'todo5';
-            newfile.type = 'file';
-            newDiv.appendChild(newfile);
-
-            var newbut = document.createElement('button');
-            newbut.className = 'todo6';
-            newbut.textContent = "click for details";
-            newDiv.appendChild(newbut);
-            newbut.addEventListener('click', function () {
-                window.location.href = "detail.html";
-
-            })
-        });
-    </script>
+    <script type="module" src="../src/js/task.jsx"></script>
 </body>
 
 </html>

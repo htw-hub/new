@@ -116,6 +116,7 @@ body {
     
 }
 .newcomment{
+    width: 80%;
     padding: 20px;
     margin: 20px auto;
     border: 1px solid #ccc;
@@ -148,4 +149,26 @@ body {
     font-size: 16px;
     outline: none;
     transition: background-color 0.3s ease;
+}
+#saveComment{
+    padding: 10px 20px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    &:hover {
+        background-color: #0056b3;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+    &:disabled {
+        background-color: #6c757d;
+        color: #fff;
+        cursor: not-allowed;
+    }
 }

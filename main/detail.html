@@ -3,38 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>details</title>
+    <link rel="stylesheet" href="../src/css/font-awesome.min.css" />
     <link href="/main/css/detail.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
     <div class="main">
-        <span>date:</span><input type="date" class="date"><br>
-        <span>person:</span><input type="text" class="person" placeholder="person">
-        <span>theme:</span><input type="text" class="theme" placeholder="theme"><br>
-        <span>text:</span><input type="text" class="text" placeholder="text"><br>
+        <span>date:</span><input type="date" class="date" id="taskdate"><br>
+        <span>person:</span><input type="text" class="person" placeholder="person" id="taskperson">
+        <span>theme:</span><input type="text" class="theme" placeholder="theme" id="tasktheme"><br>
+        <span>text:</span><input type="text" class="text" placeholder="text" id="tasktext"><br>
         <input type="file" class="file"><br>
         <div class="comment" id="comment">
-            <button class="comments" id="comments">add comments</button>
+            <div id="showComment">
+
+            </div>
+            <button   class="comments" id="comments">add comments</button>
+            <div class="newcomment" style="display: none;" id="AddNewcomment">
+                <input type="text" class="newc" id="newc" placeholder="comment">
+            </div>
+        </div>
+        <div>
+            <button id="saveComment">保存</button>
         </div>
     </div>
     <div class="copyright">
         <p>南京大学</p>
     </div>
-    <script>
-        var div = document.getElementById('comments');
-        div.addEventListener('click', function(){
-            var newDiv = document.createElement('div');
-            newDiv.className = 'newcomment';
-            document.getElementById('comment').appendChild(newDiv);
-            
-            var newcomments = document.createElement('input');
-            newcomments.className = 'newc';
-            newcomments.type = 'text';
-            newDiv.appendChild(newcomments);
-        })
-    </script>
+    
+
+    <script type="module" src="../src/js/detail.jsx"></script>
 </body>
 
 </html>
